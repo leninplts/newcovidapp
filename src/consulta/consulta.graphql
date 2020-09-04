@@ -1,0 +1,29 @@
+type Consulta {
+    _id: String
+    doctorid: String
+    userid: String
+    fecha: String
+    atendido: String
+    horaregistro: String
+}
+
+input DoctorUserInput {
+    doctorid: String
+    userid: String
+}
+
+input ConsultaInput {
+    doctorid: String
+    userid: String
+    fecha: String
+    atendido: String
+}
+
+type Query {
+    consultas: [Consulta!]
+    misConsultas(input: DoctorUserInput): [Consulta]
+}
+
+type Mutation {
+    createConsulta(input: ConsultaInput!): Consulta
+}

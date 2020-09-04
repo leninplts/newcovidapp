@@ -1,0 +1,33 @@
+type Horario {
+  _id: String!
+  doctorid: String!
+  nombres: String!
+  apellidos: String!
+  diashoras: DiaHoraType
+}
+
+input HorarioInput {
+  doctorid: String!
+  diashoras: DiaHora
+}
+
+type DiaHoraType {
+  dia: String
+  inicio: String
+  fin: String
+}
+
+input DiaHora {
+  dia: String
+  inicio: String
+  fin: String
+}
+
+type Query {
+  horarios: [Horario!]
+  miHorario(doctorid: String): [Horario]
+}
+
+type Mutation {
+  createHorario(input: HorarioInput!): Horario
+}

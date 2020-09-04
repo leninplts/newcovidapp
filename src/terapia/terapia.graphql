@@ -1,0 +1,46 @@
+type Terapia {
+    _id: String
+    doctorid: String
+    docnombres: String
+    docapellidos: String
+    userid: String
+    nombres: String
+    apellidos: String
+    dni: String
+    tratamiento: String
+    reqevaluacion: String
+    examenes: String
+    atencionpoeremergencia: String
+    daralta: String
+    horaregistro: String
+}
+
+input DoctorUserInput {
+    doctorid: String
+    userid: String
+}
+
+input TerapiaInput {
+    doctorid: String
+    docnombres: String
+    docapellidos: String
+    userid: String
+    nombres: String
+    apellidos: String
+    dni: String
+    tratamiento: String
+    reqevaluacion: String
+    examenes: String
+    atencionpoeremergencia: String
+    daralta: String
+    horaregistro: String
+}
+
+type Query {
+    terapias: [Terapia!]
+    misTerapias(input: DoctorUserInput): [Terapia]
+}
+
+type Mutation {
+    createTerapia(input: TerapiaInput!): Terapia
+}

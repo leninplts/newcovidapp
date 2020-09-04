@@ -1,0 +1,34 @@
+type Doctor {
+  _id: String!
+  nombres: String!
+  apellidos: String!
+  usuario: String
+  email: String!
+  password: String!
+  celular: String
+  especialidad: String
+}
+
+input DoctorInput {
+  nombres: String!
+  apellidos: String!
+  email: String!
+  password: String!
+  celular: String
+  especialidad: String
+}
+
+input DoctorLoginInput {
+  email: String!
+  password: String!
+}
+
+type Query {
+  meDoctor: Doctor
+  doctors: [Doctor!]
+  loginDoctor(input: DoctorLoginInput!): String
+}
+
+type Mutation {
+  createDoctor(input: DoctorInput!): String
+}

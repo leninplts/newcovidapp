@@ -1,0 +1,112 @@
+type UserTest {
+  _id: String!
+  userid: String!
+  dni: String!
+  nombres: String
+  apellidos: String
+  genero: String
+  edad: String
+  region: String
+  provincia: String
+  distrito: String
+  direccion: String
+  oficio: String
+  peso: String
+  talla: String
+  respiracion: String
+  gestante: String
+  enfermedad: String
+  enfermedaddetalle: String
+  alergia: String 
+  alergiadetalle: String 
+  alcohol: String
+  medicacion: String
+  medicaciondetalle: String
+  diagnostico: String
+  diagnosticodetalle: String
+  contactocovid: String
+  fiebre: String
+  tos: String
+  fatiga: String
+  disminucionapetito: String
+  dificultadrespiracion: String
+  malestargeneral: String
+  malestarfechainicio: String
+  otros: String
+  otrosdetalle: String
+  sinsintomas: String
+  sensaciondeahogamiento: String
+  desorientacion: String
+  fiebremayordosdias: String
+  dolorespechoespalda: String
+  coloraciondelabios: String
+  actividadesdiarias: String
+  personasdeconvivencia: String
+  doctorid: String
+  horaregistro: String
+}
+
+input UserTestInput {
+  userid: String!
+  dni: String!
+  nombres: String
+  apellidos: String
+  genero: String
+  edad: String
+  region: String
+  provincia: String
+  distrito: String
+  direccion: String
+  oficio: String
+  peso: String
+  talla: String
+  respiracion: String
+  gestante: String
+  enfermedad: String
+  enfermedaddetalle: String
+  alergia: String 
+  alergiadetalle: String 
+  alcohol: String
+  medicacion: String
+  medicaciondetalle: String
+  diagnostico: String
+  diagnosticodetalle: String
+  contactocovid: String
+  fiebre: String
+  tos: String
+  fatiga: String
+  disminucionapetito: String
+  dificultadrespiracion: String
+  malestargeneral: String
+  malestarfechainicio: String
+  otros: String
+  otrosdetalle: String
+  sinsintomas: String
+  sensaciondeahogamiento: String
+  desorientacion: String
+  fiebremayordosdias: String
+  dolorespechoespalda: String
+  coloraciondelabios: String
+  actividadesdiarias: String
+  personasdeconvivencia: String
+}
+
+type MiPaciente {
+  userid: String
+  nombres: String
+  apellidos: String
+  evaluacion: String
+  genero: String
+  distrito: String
+}
+
+type Query {
+  userTest: UserTest
+  userTests: [UserTest!]
+  miPaciente(doctorid: String): [MiPaciente]
+  # login(input: LoginInput!): String
+}
+
+type Mutation {
+  createUserTest(input: UserTestInput!): UserTest
+}

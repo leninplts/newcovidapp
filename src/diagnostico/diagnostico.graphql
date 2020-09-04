@@ -1,0 +1,36 @@
+type Diagnostico {
+    _id: String
+    doctorid: String
+    userid: String
+    nombres: String
+    apellidos: String
+    dni: String
+    casocovid: String
+    factorderiesgo: String
+    horaregistro: String
+}
+
+input DoctorUserInput {
+    doctorid: String
+    userid: String
+}
+
+input DiagnosticoInput {
+    doctorid: String
+    userid: String
+    nombres: String
+    apellidos: String
+    dni: String
+    casocovid: String
+    factorderiesgo: String
+    horaregistro: String
+}
+
+type Query {
+    diagnosticos: [Diagnostico!]
+    misDiagnosticos(input: DoctorUserInput): [Diagnostico]
+}
+
+type Mutation {
+    createDiagnostico(input: DiagnosticoInput!): Diagnostico
+}
